@@ -3,6 +3,7 @@
 
 import Cocoa
 import ServiceManagement
+import WireGuardGoBridge
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

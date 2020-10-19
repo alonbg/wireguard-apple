@@ -1,0 +1,5 @@
+module WireGuardGoBridge {
+    umbrella header "WireGuardGoBridge.h"
+    export *
+    module * { export * }
+}

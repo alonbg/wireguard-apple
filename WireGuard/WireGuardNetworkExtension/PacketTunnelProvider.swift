@@ -5,6 +5,7 @@ import Foundation
 import Network
 import NetworkExtension
 import os.log
+import WireGuardGoBridge
 
 class PacketTunnelProvider: NEPacketTunnelProvider {
 
@@ -183,6 +184,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 .withCString { return wgSetConfig(handle, $0) }
         }
         #endif
+
+
         wgBumpSockets(handle)
     }
 }
