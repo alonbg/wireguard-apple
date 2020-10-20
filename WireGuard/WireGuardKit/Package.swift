@@ -12,6 +12,7 @@ let package = Package(
     products: [
         .library(
             name: "WireGuardKit",
+            type: .dynamic,
             targets: ["WireGuardKit"]
         ),
         .library(

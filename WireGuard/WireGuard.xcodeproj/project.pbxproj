@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58356FC1253F5C7100800131 /* WireGuardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 58356FC0253F5C7100800131 /* WireGuardKit */; };
+		58356FC2253F5C7100800131 /* WireGuardKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 58356FC0253F5C7100800131 /* WireGuardKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		58356FC4253F5C8000800131 /* WireGuardKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 58D792CC253F2971000B3DD8 /* WireGuardKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		58D792CD253F2971000B3DD8 /* WireGuardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 58D792CC253F2971000B3DD8 /* WireGuardKit */; };
-		58D79335253F3E37000B3DD8 /* WireGuardKit in Frameworks */ = {isa = PBXBuildFile; productRef = 58D79334253F3E37000B3DD8 /* WireGuardKit */; };
 		58D7938D253F4F77000B3DD8 /* WireGuardGoBridge in Frameworks */ = {isa = PBXBuildFile; productRef = 58D7938C253F4F77000B3DD8 /* WireGuardGoBridge */; };
 		58D79394253F4F80000B3DD8 /* WireGuardGoBridge in Frameworks */ = {isa = PBXBuildFile; productRef = 58D79393253F4F80000B3DD8 /* WireGuardGoBridge */; };
 		5F45417D21C1B23600994C13 /* UITableViewCell+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F45417C21C1B23600994C13 /* UITableViewCell+Reuse.swift */; };
@@ -226,6 +228,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		58356FC3253F5C7200800131 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				58356FC2253F5C7100800131 /* WireGuardKit in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58356FC5253F5C8000800131 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				58356FC4253F5C8000800131 /* WireGuardKit in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6F5D0C26218352EF000F85AD /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,8 +440,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				58D7938D253F4F77000B3DD8 /* WireGuardGoBridge in Frameworks */,
-				58D79335253F3E37000B3DD8 /* WireGuardKit in Frameworks */,
 				6FB1BDDA21D5170800A991BF /* NetworkExtension.framework in Frameworks */,
+				58356FC1253F5C7100800131 /* WireGuardKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +832,7 @@
 				6FB1BD5B21D2607A00A991BF /* Resources */,
 				6FB1BD9D21D4BFE700A991BF /* Embed App Extensions */,
 				6F70E23C22109DE5008BDFB4 /* Embed Login Item Helper */,
+				58356FC3253F5C7200800131 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -818,8 +843,8 @@
 			);
 			name = WireGuardmacOS;
 			packageProductDependencies = (
-				58D79334253F3E37000B3DD8 /* WireGuardKit */,
 				58D7938C253F4F77000B3DD8 /* WireGuardGoBridge */,
+				58356FC0253F5C7100800131 /* WireGuardKit */,
 			);
 			productName = WireGuardmacOS;
 			productReference = 6FB1BD5D21D2607A00A991BF /* WireGuard.app */;
@@ -833,6 +858,7 @@
 				6FB1BD8D21D4BFE600A991BF /* Sources */,
 				6FB1BD8E21D4BFE600A991BF /* Frameworks */,
 				6FB1BD8F21D4BFE600A991BF /* Resources */,
+				58356FC5253F5C8000800131 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1767,11 +1793,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		58D792CC253F2971000B3DD8 /* WireGuardKit */ = {
+		58356FC0253F5C7100800131 /* WireGuardKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WireGuardKit;
 		};
-		58D79334253F3E37000B3DD8 /* WireGuardKit */ = {
+		58D792CC253F2971000B3DD8 /* WireGuardKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WireGuardKit;
 		};
