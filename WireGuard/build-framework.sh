@@ -1,25 +1,58 @@
 #!/bin/bash
 
-xcodebuild -project WireGuardGoBridge.xcodeproj \
-  -configuration Release \
-  -sdk macosx \
-  -scheme WireGuardGoBridgemacOS \
-  clean build \
-  CONFIGURATION_BUILD_DIR=./build/wg-go-bridge-mac.out
+#### Configuration
 
-# xcodebuild -project WireGuardGoBridge.xcodeproj \
-#   -configuration Release \
-#   -sdk iphoneos \
-#   -scheme WireGuardGoBridgeiOS \
-#   CONFIGURATION_BUILD_DIR=./build/wg-go-bridge-ios.out \
-#   BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+# Xcode project configuration
+XCODE_PROJECT_PATH="WireGuardGoBridge.xcodeproj"
+XCODE_PROJECT_CONFIGURATION="Release"
+XCODE_PROJECT_MACOS_SCHEME="WireGuardGoBridgemacOS"
+XCODE_PROJECT_IOS_SCHEME="WireGuardGoBridgeiOS"
 
-if [ -d ./build/WireGuardGoBridge.xcframework ]; then
-  rm -rf ./build/WireGuardGoBridge.xcframework
+# Build folders
+MACOS_DERIVED_DATA_PATH="./WireGuardGoBridge.build/ios"
+IOS_DERIVED_DATA_PATH="./WireGuardGoBridge.build/macos"
+
+# Wireguard-go static library name
+LIB_NAME="libwg-go.a"
+
+# XCFramework configuration
+XCFRAMEWORK_OUTPUT_PATH="WireGuardGoBridge.build/WireGuardGoBridge.xcframework"
+XCFRAMEWORK_HEADERS_PATH="../wireguard-go-bridge/xcframework/Headers"
+
+# Deployment
+XCFRAMEWORK_DEPLOY_PATH="./WireGuardGoBridge/WireGuardGoBridge.xcframework"
+
+#### Build wireguard-go
+
+xcodebuild -project "$XCODE_PROJECT_PATH" \
+  -configuration "$XCODE_PROJECT_CONFIGURATION" \
+  -scheme "$XCODE_PROJECT_MACOS_SCHEME" \
+  -derivedDataPath "$MACOS_DERIVED_DATA_PATH" \
+  clean build
+
+xcodebuild -project "$XCODE_PROJECT_PATH" \
+  -configuration "$XCODE_PROJECT_CONFIGURATION" \
+  -scheme WireGuardGoBridgeiOS \
+  -derivedDataPath "$IOS_DERIVED_DATA_PATH" \
+  clean build
+
+if [ -d "$XCFRAMEWORK_OUTPUT_PATH" ]; then
+  rm -rf "$XCFRAMEWORK_OUTPUT_PATH"
 fi
 
-xcodebuild -create-xcframework -library ./build/wg-go-bridge-mac.out/libwg-go.a \
-  -headers ../wireguard-go-bridge/xcframework/Headers \
-  -output ./build/WireGuardGoBridge.xcframework
+#### Build XCFramework
 
-# Copy ./build/WireGuardGoBridge.xcframework to ./WireGuardGoBridge/WireGuardGoBridge.xcframework
+xcodebuild -create-xcframework \
+  -library "$MACOS_DERIVED_DATA_PATH/Build/Products/Release/$LIB_NAME" \
+  -headers "$XCFRAMEWORK_HEADERS_PATH" \
+  -library "$IOS_DERIVED_DATA_PATH/Build/Products/Release-iphoneos/$LIB_NAME" \
+  -headers "$XCFRAMEWORK_HEADERS_PATH" \
+  -output "$XCFRAMEWORK_OUTPUT_PATH"
+
+#### Deploy
+
+if [ -d "$XCFRAMEWORK_DEPLOY_PATH" ]; then
+  rm -rf "$XCFRAMEWORK_DEPLOY_PATH"
+fi
+
+cp -R "$XCFRAMEWORK_OUTPUT_PATH" "$XCFRAMEWORK_DEPLOY_PATH"
