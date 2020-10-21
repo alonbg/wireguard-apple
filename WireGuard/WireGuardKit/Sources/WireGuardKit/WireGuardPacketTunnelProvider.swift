@@ -5,6 +5,7 @@ import Foundation
 import NetworkExtension
 import WireGuardGoBridge
 
+@available(iOSApplicationExtension 12.0, macOSApplicationExtension 10.14, *)
 open class WireGuardPacketTunnelProvider: NEPacketTunnelProvider {
 
     private let dispatchQueue = DispatchQueue(label: "WireGuardPacketTunnel", qos: .utility)
