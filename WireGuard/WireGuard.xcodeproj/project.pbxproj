@@ -1005,9 +1005,9 @@
 			targets = (
 				6FB1BD5C21D2607A00A991BF /* WireGuardmacOS */,
 				6FB1BD9021D4BFE600A991BF /* WireGuardNetworkExtensionmacOS */,
-				6F5D0C19218352EF000F85AD /* WireGuardNetworkExtensioniOS */,
 				6F70E22822106A2D008BDFB4 /* WireGuardmacOSLoginItemHelper */,
 				6FF4AC13211EC46F002C96EB /* WireGuardiOS */,
+				6F5D0C19218352EF000F85AD /* WireGuardNetworkExtensioniOS */,
 			);
 		};
 /* End PBXProject section */
