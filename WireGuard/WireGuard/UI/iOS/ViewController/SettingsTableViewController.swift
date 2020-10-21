@@ -3,6 +3,7 @@
 
 import UIKit
 import os.log
+import WireGuardKit
 
 class SettingsTableViewController: UITableViewController {
 
