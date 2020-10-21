@@ -3,7 +3,7 @@
 
 import Foundation
 import os.log
-import WireGuardGoBridge
+import WireGuardKit
 
 public class Logger {
     enum LoggerError: Error {

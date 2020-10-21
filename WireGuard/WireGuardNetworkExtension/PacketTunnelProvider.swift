@@ -5,7 +5,7 @@ import Foundation
 import Network
 import NetworkExtension
 import os.log
-import WireGuardGoBridge
+import WireGuardKit
 
 class PacketTunnelProvider: NEPacketTunnelProvider {
 

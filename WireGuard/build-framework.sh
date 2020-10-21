@@ -22,4 +22,4 @@ xcodebuild -create-xcframework -library ./build/wg-go-bridge-mac.out/libwg-go.a 
   -headers ../wireguard-go-bridge/xcframework/Headers \
   -output ./build/WireGuardGoBridge.xcframework
 
-# Copy ./build/WireGuardGoBridge.xcframework to ./WireGuardKit/WireGuardGoBridge.xcframework
+# Copy ./build/WireGuardGoBridge.xcframework to ./WireGuardGoBridge/WireGuardGoBridge.xcframework

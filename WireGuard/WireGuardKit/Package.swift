@@ -14,18 +14,12 @@ let package = Package(
             name: "WireGuardKit",
             type: .dynamic,
             targets: ["WireGuardKit"]
-        ),
-        .library(
-            name: "WireGuardGoBridge",
-            targets: ["WireGuardGoBridge"]
         )
     ],
-    dependencies: [],
+    dependencies: [
+        .package(name: "WireGuardGoBridge", path: "WireGuardGoBridge")
+    ],
     targets: [
-        .binaryTarget(
-            name: "WireGuardGoBridge",
-            path: "WireGuardGoBridge.xcframework"
-        ),
         .target(name: "WireGuardKit", dependencies: ["WireGuardGoBridge"]),
         .testTarget(name: "WireGuardKitTests", dependencies: ["WireGuardKit"])
     ]
