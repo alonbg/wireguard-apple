@@ -1108,25 +1108,6 @@
 			shellPath = /bin/sh;
 			shellScript = "find . -name '*.swift' -exec sed -i '' -E 's/[[:space:]]+$//g' {} +\n";
 		};
-		6B87860E2189532500C099FB /* Extract wireguard-go Version */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Extract wireguard-go Version";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "exec make -C \"$PROJECT_DIR/../wireguard-go-bridge\" version-header\n";
-			showEnvVarsInLog = 0;
-		};
 		6FB1BDB421D4F5CF00A991BF /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
